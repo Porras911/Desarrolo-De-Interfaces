@@ -27,7 +27,7 @@ public class Main extends Application {
 //				
 //				@Override
 //				public void handle(ActionEvent arg0) {
-//					System.out.println("Tus muertos");
+//					System.out.println("Jellow");
 //				}
 //			});
 //			
@@ -47,7 +47,7 @@ public class Main extends Application {
 				Scene escene = new Scene(panel, 400, 400);
 				primaryStage.getIcons().add(new Image ("/application/folder.png"));
 				primaryStage.setScene(escene);
-				primaryStage.setTitle("Callate la boca");
+				primaryStage.setTitle("Primera Interfaz");
 				primaryStage.show();
 				
 				
