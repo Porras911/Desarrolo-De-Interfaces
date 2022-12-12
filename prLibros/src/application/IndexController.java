@@ -54,9 +54,7 @@ public class IndexController {
 	private Button btnBorrar;
 	
 	private ObservableList<Libro> listaLibros =
-		FXCollections.observableArrayList(
-				new Libro("La Biblia", "Planeta", "Jesús", 500)
-		);
+		FXCollections.observableArrayList();
 	
 	public ObservableList<String> listaEditoriales = 
 		FXCollections.observableArrayList(
@@ -144,12 +142,38 @@ public class IndexController {
 						Integer.parseInt(txtPaginas.getText())
 				);
 					
-				listaLibros.add(l);
+//				listaLibros.add(l);
 				
 				txtTitulo.clear();
 				cbEditorial.getSelectionModel().clearSelection();
 				txtAutor.clear();
 				txtPaginas.clear();
+				
+				DatabaseConnection dbConnection = new DatabaseConnection();
+				Connection connection = dbConnection.getConnection();
+				
+				String query =" insert into libros (titulo, editorial, autor, paginas)"
+						+ "VALUES (?, ?, ?, ?)";
+				
+				try {
+					PreparedStatement ps = connection.prepareStatement(query);
+					
+					ps.setString(1, l.getTitulo());
+					ps.setString(2, l.getEditorial());
+					ps.setString(3, l.getAutor());
+					ps.setInt(4, l.getPaginas());
+					ps.executeUpdate();
+					connection.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				//despues de 
+				
+				ObservableList listaLibrosBD=getLibrosBD();
+				
+				tableLibros.setItems(listaLibrosBD); 
+				
 				
 			} else {
 				
