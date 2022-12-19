@@ -1,0 +1,32 @@
+.button{
+	-fx-background-color: BurlyWood;
+	-fx-font-size: 10pt;
+	-fx-border-color: grey;
+	-fx-text-fill: white;
+}
+
+.button:hover{
+	-fx-background-color: DarkGoldenrod;
+	-fx-font-size: 11pt;
+	-fx-border-color: grey;
+	-fx-text-fill: white;
+	
+}
+#panel-izq{
+	-fx-background-color: lightblue;
+	
+}
+#barra{
+	-fx-background-color: grey;
+	}
+#panel-right{
+		-fx-background-color:BurlyWood;
+	}
+#tabla{
+	-fx-background-color:#f1e1cd;
+	-fx-color:#f1e1cd;
+	-fx-background:#f1e1cd;
+}
+	
+	
+	

@@ -1,0 +1,2 @@
+--module-path "C:\Users\Usuario\Desarrolo-De-Interfaces\Librerias\javafx-sdk-19\lib"
+--add-modules javafx.controls,javafx.fxml
